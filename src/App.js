@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BarraBusqueda from "./components/BarraBusqueda";
 
 const people = [
   {
@@ -59,6 +60,7 @@ function App() {
 
   const [selection, setSelection] = useState(null);
   const [option, setOption] = useState('all');
+  const [ cont, setCont] = useState(1);
 
   function handleClick(e) {
     const key = e.target.name;
@@ -91,11 +93,10 @@ function App() {
       <button onClick={handleClick} name="people"> Personas </button>
       <button onClick={handleClick} name="calendar"> Calendario </button>
       <button onClick={handleClick} name="email"> Asunto Correo </button>
-      <div>
-        {data.map((item)=>(
-          <div>{item.title}</div>
-          ))}
-      </div>
+      <button onClick={()=>{setCont(cont+1)}}>{cont}</button>
+
+      <BarraBusqueda items={data}
+                    itemSeleccionados={()=>{}}/>
       
     </div>
   );
