@@ -27,7 +27,9 @@ export default function Resultados({items,itemSeleccionados,consulta,resulCalcul
     <div>
         {consulta=!''?
         filtroItems.map(item=>(
-        <MarcarItem key={item.id} item={item} consulta={consulta} onClick={itemSeleccionados}/>)):''}
+        <MarcarItem key={item.id} item={item} 
+        consulta={consulta} 
+        onClick={itemSeleccionados}/>)):''}
     </div>
      )
 }
