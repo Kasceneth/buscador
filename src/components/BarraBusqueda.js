@@ -12,12 +12,17 @@ export default function BarraBusqueda({items,itemSeleccionados}){
     function handleResults(items){
         setResultados(items)
     }
+
+    function handleItemsSeleccionados(){
+        
+
+    }
     return(
     <div>
         {resultados&&<div>{resultados.length}results</div>}
         <input type="text" onChange={handleChange} value={consulta}/>
         <Resultados items={items}
-                    itemSeleccionados={()=>{}}
+                    itemSeleccionados={handleItemsSeleccionados}
                     consulta={consulta} 
                     resulCalculados={handleResults}/>
     </div>
