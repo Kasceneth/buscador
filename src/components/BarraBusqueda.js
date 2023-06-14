@@ -13,8 +13,10 @@ export default function BarraBusqueda({ items, itemSeleccionados }) {
         setResultados(items)
     }
 
+
     return (
         <div>
+
 
             <input className="form-control" aria-describedby="passwordHelpBlock" type="text" onChange={handleChange} value={consulta} />
             <Resultados items={items}
@@ -23,5 +25,22 @@ export default function BarraBusqueda({ items, itemSeleccionados }) {
                 resulCalculados={handleResults} />
             {resultados && <div>{resultados.length}results</div>}
         </div>
+
+    <div>
+        {resultados&&<div>{resultados.length}results</div>}
+        <input type="text" onChange={handleChange} value={consulta}/>
+        <Resultados items={items}
+
+                    itemSeleccionados={()=>{}}
+
+                    itemSeleccionados={handleItemsSeleccionados}
+                    consulta={consulta} 
+                    resulCalculados={handleResults}/>
+    </div>
+
     )
+
 }
+
+}
+

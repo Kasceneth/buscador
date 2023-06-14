@@ -1,3 +1,4 @@
+
 import { useState, useMemo, useEffect } from "react"
 import { MarcarItem } from "./MarcarItem";
 
@@ -33,3 +34,5 @@ export default function Resultados({items,itemSeleccionados,consulta,resulCalcul
     </div>
      )
 }
+
+
