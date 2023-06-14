@@ -15,10 +15,12 @@ function obtenerPosicion(item,consulta){
 
     return{izq,cen,der};
 }
-
+function handleClick(e){
+   onClick(item);
+}
     return (
 
-        <button>
+        <button onClick={handleClick}>
             {izq}
             <span style={{fontWeight:'bolder', backgroundColor:'yellow'}}>{cen}</span>
             {der}

@@ -60,7 +60,7 @@ function App() {
 
   const [selection, setSelection] = useState(null);
   const [option, setOption] = useState('all');
-  const [ cont, setCont] = useState(1);
+  const [cont, setCont] = useState(1);
 
   function handleClick(e) {
     const key = e.target.name;
@@ -87,19 +87,32 @@ function App() {
     }
 
   }
+function handleItemSeleccionado(item){
+  setSelection(item);
+}
   return (
     <div >
-      <button onClick={handleClick} name="all"> Todas </button>
-      <button onClick={handleClick} name="people"> Personas </button>
-      <button onClick={handleClick} name="calendar"> Calendario </button>
-      <button onClick={handleClick} name="email"> Asunto Correo </button>
-      <button onClick={()=>{setCont(cont+1)}}>{cont}</button>
-
-      <BarraBusqueda items={data}
-                    itemSeleccionados={()=>{}}/>
-      
-    </div>
-  );
+      <div style={{ width: "800", height: "800" }}>
+        <h1></h1>
+      </div>
+      <BarraBusqueda items={data} itemSeleccionados={handleItemSeleccionado} />
+      <nav class="navbar bg-body-tertiary">
+        <form class="container-fluid">
+          <div class="input-group">
+            <button className="btn btn-success" onClick={handleClick} name="all"> Todas </button>
+            <button className="btn btn-success" onClick={handleClick} name="people"> Personas </button>
+            <button className="btn btn-success" onClick={handleClick} name="calendar"> Calendario </button>
+            <button className="btn btn-success" onClick={handleClick} name="email"> Asunto Correo </button>
+            <button className="btn btn-success" onClick={() => { setCont(cont + 1) }}>{cont}</button>
+          </div>
+          </form>
+          </nav>
+          {selection ? <div> Tu seleccionaste: {selection.title}</div>:""}
+        </div>
+        );
 }
 
+
+
 export default App;
+
