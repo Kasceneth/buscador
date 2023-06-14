@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BarraBusqueda from "./components/BarraBusqueda";
+import './style.css'
 
 const people = [
   {
@@ -91,22 +92,23 @@ function handleItemSeleccionado(item){
   setSelection(item);
 }
   return (
-    <div >
-      <div style={{ width: "800", height: "800" }}>
-        <h1></h1>
-      </div>
+    <div className="container"  >
+      <div>
       <BarraBusqueda items={data} itemSeleccionados={handleItemSeleccionado} />
-      <nav class="navbar bg-body-tertiary">
-        <form class="container-fluid">
-          <div class="input-group">
+      </div>
+     <div className="container fluid center">
+      <nav className="navbar bg-body-tertiary">
+        <div className="container-fluid center">
+          <div className="input-group">
             <button className="btn btn-success" onClick={handleClick} name="all"> Todas </button>
             <button className="btn btn-success" onClick={handleClick} name="people"> Personas </button>
             <button className="btn btn-success" onClick={handleClick} name="calendar"> Calendario </button>
             <button className="btn btn-success" onClick={handleClick} name="email"> Asunto Correo </button>
             <button className="btn btn-success" onClick={() => { setCont(cont + 1) }}>{cont}</button>
           </div>
-          </form>
+          </div>
           </nav>
+          </div>
           {selection ? <div> Tu seleccionaste: {selection.title}</div>:""}
         </div>
         );
